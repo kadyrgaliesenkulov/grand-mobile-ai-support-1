@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Mobile AI Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">GM</span>
+            <div>
+                <b>Grand Mobile</b>
+                <small>AI Support Center</small>
+            </div>
+        </div>
+
+        <nav>
+            <a class="active" href="#dashboard">▦ Басты бет</a>
+            <a href="#new-ticket">✉ Шағым жіберу</a>
+            <a href="#how-it-works">✦ AI көмекшісі</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <span class="status-dot"></span>
+            Жүйе жұмыс істеп тұр
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">ҚОЛДАУ ОРТАЛЫҒЫ</p>
+                <h1>AI шағым көмекшісі</h1>
+            </div>
+            <div class="user-chip">Ойыншы</div>
+        </header>
+
+        <section class="stats" id="dashboard">
+
+            <article class="stat-card">
+                <span>Барлық өтініш</span>
+                <strong id="totalCount">0</strong>
+                <small>Осы сессияда</small>
+            </article>
+
+            <article class="stat-card">
+                <span>Тексерілуде</span>
+                <strong id="reviewCount">0</strong>
+                <small>AI талдауы қажет</small>
+            </article>
+
+            <article class="stat-card">
+                <span>Жауап берілді</span>
+                <strong id="resolvedCount">0</strong>
+                <small>Алдын ала жауап</small>
+            </article>
+
+        </section>
+
+        <section class="content-grid">
+
+            <section class="panel" id="new-ticket">
+
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">1-ҚАДАМ</p>
+                        <h2>Шағымды жіберу</h2>
+                    </div>
+                    <span class="step-icon">01</span>
+                </div>
+
+                <p class="muted">
+                    Мәселеңізді толық сипаттаңыз.
+                    AI көмекшісі оны талдап,
+                    қажетті ақпаратты анықтайды.
+                </p>
+
+                <form id="complaintForm">
+
+                    <label for="nickname">
+                        Сіздің ойын ішіндегі никнейміңіз
+                    </label>
+                    <input id="nickname"
+                           name="nickname"
+                           placeholder="Player123"
+                           required maxlength="40">
+
+                    <label for="reported">
+                        Шағым түсіп отырған ойыншының никнеймі
+                    </label>
+                    <input id="reported"
+                           name="reported"
+                           placeholder="Ойыншы никнеймі"
+                           maxlength="40">
+
+                    <label for="category">Мәселе түрі</label>
+                    <select id="category" name="category">
+                        <option value="auto">AI өзі анықтасын</option>
+                        <option value="scam">Алаяқтық</option>
+                        <option value="insult">Балағаттау</option>
+                        <option value="cheating">Чит қолдану</option>
+                        <option value="technical">Техникалық мәселе</option>
+                        <option value="other">Басқа</option>
+                    </select>
+
+                    <label for="description">
+                        Мәселенің сипаттамасы
+                    </label>
+                    <textarea id="description"
+                              name="description"
+                              rows="5"
+                              placeholder="Не болғанын толық жазыңыз..."
+                              required minlength="10"></textarea>
+
+                    <label for="evidence">
+                        Дәлел сілтемесі (міндетті емес)
+                    </label>
+                    <input id="evidence"
+                           name="evidence"
+                           type="url"
+                           placeholder="https://...">
+
+                    <button class="primary-button" type="submit">
+                        AI арқылы талдау →
+                    </button>
+
+                </form>
+
+                <p class="tiny">
+                    Құпиясөз және жеке төлем деректерін жазбаңыз.
+                </p>
+
+            </section>
+
+            <section class="panel result-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">2–3 ҚАДАМ</p>
+                        <h2>AI талдау нәтижесі</h2>
+                    </div>
+                    <span class="step-icon">02</span>
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-symbol">✦</div>
+                    <h3>Әзірге шағым жоқ</h3>
+                    <p>
+                        Форманы толтырғаннан кейін
+                        нәтиже осында шығады.
+                    </p>
+                </div>
+
+                <div id="result" class="result hidden"
+                     aria-live="polite"></div>
+
+                <div class="workflow" id="how-it-works">
+
+                    <h3>Жүйе қалай жұмыс істейді?</h3>
+
+                    <div class="workflow-step">
+                        <b>01</b>
+                        <div>
+                            <strong>Қабылдау</strong>
+                            <small>Шағым мен мәліметтер жиналады.</small>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <b>02</b>
+                        <div>
+                            <strong>Талдау</strong>
+                            <small>AI мәселені алдын ала тексереді.</small>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <b>03</b>
+                        <div>
+                            <strong>Шешім</strong>
+                            <small>Мәселе шешіледі немесе әкімшіге жіберіледі.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <footer>
+            Grand Mobile AI Support · MVP
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
